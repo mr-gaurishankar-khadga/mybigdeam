@@ -1,0 +1,411 @@
+/* Collaborations Page Styles */
+
+.collaborations-container {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.collaborations-header {
+  margin-bottom: 2rem;
+}
+
+.collaborations-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.collaborations-subtitle {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.collaborations-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+.collaborations-search {
+  position: relative;
+  flex: 1;
+  max-width: 400px;
+}
+
+.collaborations-search-input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.collaborations-search-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(122, 82, 255, 0.1);
+}
+
+.collaborations-search-icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.collaborations-filters {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.collaborations-filter-btn {
+  padding: 0.75rem 1.25rem;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.collaborations-filter-btn:hover {
+  background: var(--hover-bg);
+  border-color: var(--primary-color);
+}
+
+.collaborations-filter-btn.active {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.collaborations-create-btn {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.collaborations-create-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(122, 82, 255, 0.3);
+}
+
+.collaborations-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.collaborations-stat-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.25rem;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.collaborations-stat-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary-color);
+}
+
+.collaborations-stat-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.collaborations-stat-label {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.collaborations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.collaborations-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.collaborations-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary-color);
+}
+
+.collaborations-card-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.collaborations-creator-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.collaborations-creator-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid var(--primary-color);
+  overflow: hidden;
+}
+
+.collaborations-creator-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.collaborations-creator-details h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 0.25rem;
+}
+
+.collaborations-creator-details p {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.collaborations-creator-stats {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.collaborations-creator-stat {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.collaborations-card-content {
+  padding: 1.5rem;
+}
+
+.collaborations-campaign-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 0.75rem;
+}
+
+.collaborations-campaign-description {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.collaborations-campaign-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.collaborations-metric {
+  text-align: center;
+  padding: 0.75rem;
+  background: var(--bg-color);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.collaborations-metric-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.25rem;
+}
+
+.collaborations-metric-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.collaborations-card-actions {
+  display: flex;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  border-top: 1px solid var(--border-color);
+  background: var(--bg-color);
+}
+
+.collaborations-action-btn {
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--card-bg);
+  color: var(--text-color);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.collaborations-action-btn:hover {
+  background: var(--hover-bg);
+  border-color: var(--primary-color);
+}
+
+.collaborations-action-btn.primary {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.collaborations-action-btn.primary:hover {
+  background: var(--accent-color);
+  transform: translateY(-1px);
+}
+
+.collaborations-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.collaborations-status.active {
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--success-color);
+}
+
+.collaborations-status.pending {
+  background: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+}
+
+.collaborations-status.completed {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+
+.collaborations-status.draft {
+  background: rgba(107, 114, 128, 0.1);
+  color: var(--text-muted);
+}
+
+.collaborations-empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--card-bg);
+  border: 2px dashed var(--border-color);
+  border-radius: 16px;
+  margin: 2rem 0;
+}
+
+.collaborations-empty-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  background: linear-gradient(135deg, var(--bg-color), var(--card-bg));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 2rem;
+}
+
+.collaborations-empty-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.collaborations-empty-description {
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .collaborations-container {
+    padding: 0;
+  }
+  
+  .collaborations-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .collaborations-search {
+    max-width: none;
+  }
+  
+  .collaborations-filters {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .collaborations-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .collaborations-campaign-metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .collaborations-card-actions {
+    flex-direction: column;
+  }
+  
+  .collaborations-title {
+    font-size: 1.5rem;
+  }
+} 

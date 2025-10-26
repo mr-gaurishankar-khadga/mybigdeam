@@ -1,0 +1,154 @@
+.brand-bottom-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  background: var(--card-bg);
+  border-top: 1px solid var(--border-color);
+  box-shadow: var(--shadow-md);
+  padding: 8px 16px;
+  transition: transform 0.2s ease;
+  display: none;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  width: 100%;
+}
+
+.brand-bottom-bar.visible {
+  transform: translateY(0);
+}
+
+.brand-bottom-bar.hidden {
+  transform: translateY(100%);
+}
+
+@media (max-width: 768px) {
+  .brand-bottom-bar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 56px;
+    padding: 8px 16px;
+    padding-bottom: max(8px, env(safe-area-inset-bottom));
+  }
+}
+
+.brand-bottom-bar-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--text-muted);
+  font-size: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 6px 4px;
+  position: relative;
+  min-width: 48px;
+  z-index: 1;
+}
+
+.brand-icon-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 32px;
+  border-radius: 16px;
+  margin-bottom: 2px;
+  transition: background 0.25s cubic-bezier(0.4, 0, 0.2, 1), width 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.brand-bottom-bar-item.active .brand-icon-wrapper {
+  background: var(--active-bg);
+  opacity: 0.8;
+  width: 56px;
+  border-radius: 18px;
+  transition: background 0.25s cubic-bezier(0.4, 0, 0.2, 1), width 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.brand-bottom-bar-item svg {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  z-index: 1;
+  transition: color 0.2s ease;
+}
+
+.brand-bottom-bar-item.active svg {
+  color: var(--primary-color);
+  stroke-width: 2;
+}
+
+.brand-bottom-bar-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: color 0.2s, font-weight 0.2s;
+  color: var(--text-muted);
+}
+
+.brand-bottom-bar-item.active .brand-bottom-bar-label {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.dark-theme .brand-bottom-bar {
+  background: var(--card-bg);
+  border-top: 1px solid var(--border-color);
+  box-shadow: var(--shadow-md);
+}
+
+.dark-theme .brand-bottom-bar-item {
+  color: var(--text-muted);
+}
+
+.dark-theme .brand-bottom-bar-item.active .brand-icon-wrapper {
+  background: var(--active-bg);
+  opacity: 0.8;
+}
+
+.dark-theme .brand-bottom-bar-item.active svg,
+.dark-theme .brand-bottom-bar-item.active .brand-bottom-bar-label {
+  color: #FFFFFF;
+}
+
+@supports (padding: max(0px)) {
+  .brand-bottom-bar {
+    padding-bottom: max(8px, env(safe-area-inset-bottom));
+  }
+}
+
+.brand-bottom-bar-item:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+@media (max-width: 360px) {
+  .brand-bottom-bar {
+    height: 52px;
+    padding: 6px 12px;
+  }
+  
+  .brand-bottom-bar-item {
+    padding: 4px 2px;
+  }
+  
+  .brand-icon-wrapper {
+    width: 32px;
+    height: 28px;
+    border-radius: 14px;
+  }
+  .brand-bottom-bar-item svg {
+    width: 20px;
+    height: 20px;
+  }
+  .brand-bottom-bar-label {
+    font-size: 9px;
+  }
+} 

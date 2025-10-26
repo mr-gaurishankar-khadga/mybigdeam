@@ -1,0 +1,543 @@
+/* FlowBuilder.css - Flow Builder Specific Styles */
+
+/* ====== FLOW BUILDER CONTAINER ====== */
+.flow-builder-container {
+  width: 100%;
+  height: 100vh;
+  background: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.builder-container {
+  width: 100%;
+  height: 100%;
+  background: var(--card-bg);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.builder-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--card-bg);
+  flex-shrink: 0;
+}
+
+.builder-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.builder-title h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.builder-actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.save-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: var(--success-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.save-btn:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+.close-btn {
+  width: 40px;
+  height: 40px;
+  background: var(--error-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-btn:hover {
+  background: #e53e3e;
+  transform: scale(1.05);
+}
+
+.builder-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* ====== COMPONENTS PALETTE ====== */
+.components-palette {
+  width: 280px;
+  background: var(--sidebar-bg);
+  border-right: 1px solid var(--border-color);
+  padding: 1rem;
+  overflow: visible;
+  flex-shrink: 0;
+}
+
+.components-palette h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+.palette-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  overflow: visible;
+}
+
+.palette-item {
+  padding: 0.75rem;
+  background: var(--card-bg);
+  border: 2px dashed var(--border-color);
+  border-radius: 8px;
+  cursor: grab;
+  transition: all var(--transition-normal);
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 80px;
+}
+
+.palette-item:hover {
+  border-style: solid;
+  transform: none;
+  box-shadow: var(--shadow-md);
+  overflow: visible;
+}
+
+.palette-item:active {
+  cursor: grabbing;
+  transform: none;
+}
+
+.palette-item .palette-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.palette-item .palette-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.palette-item span {
+  font-weight: 600;
+  color: var(--text-color);
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.palette-item p {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.3;
+  margin: 0;
+}
+
+/* ====== CANVAS AREA ====== */
+.canvas-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.flow-canvas {
+  flex: 1;
+  position: relative;
+  background: var(--card-bg);
+  background-image: 
+    radial-gradient(circle, var(--border-color) 1px, transparent 1px);
+  background-size: 20px 20px;
+  overflow: auto;
+  min-height: 500px;
+}
+
+.canvas-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+}
+
+.empty-message {
+  color: var(--text-muted);
+}
+
+.empty-message svg {
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.empty-message h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.empty-message p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* ====== CANVAS NODES ====== */
+.canvas-node {
+  position: absolute;
+  width: 180px;
+  background: var(--card-bg);
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  cursor: grab;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-sm);
+  user-select: none;
+}
+
+.canvas-node:active {
+  cursor: grabbing;
+}
+
+.canvas-node:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-md);
+}
+
+.canvas-node.selected {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+}
+
+.node-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  color: white;
+  font-weight: 600;
+  font-size: 0.85rem;
+  border-radius: 10px 10px 0 0;
+  position: relative;
+}
+
+.node-delete {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all var(--transition-normal);
+}
+
+.canvas-node:hover .node-delete {
+  opacity: 1;
+}
+
+.node-delete:hover {
+  background: var(--error-color);
+}
+
+.node-body {
+  padding: 0.75rem;
+}
+
+.node-content {
+  font-size: 0.8rem;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.node-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.connect-handle {
+  width: 28px;
+  height: 28px;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-normal);
+}
+
+.connect-handle:hover {
+  background: var(--primary-hover);
+  transform: scale(1.1);
+}
+
+/* ====== CONNECTIONS LAYER ====== */
+.connections-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ====== PROPERTIES PANEL ====== */
+.properties-panel {
+  width: 300px;
+  min-width: 300px;
+  background: var(--bg-color);
+  border-left: 1px solid var(--border-color);
+  padding: 1.5rem;
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+
+.properties-panel h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+}
+
+.config-section {
+  margin-bottom: 1.5rem;
+}
+
+.config-section label {
+  display: block;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.config-section select,
+.config-section input,
+.config-section textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--card-bg);
+  color: var(--text-color);
+  font-size: 0.9rem;
+  transition: all var(--transition-normal);
+  box-sizing: border-box;
+}
+
+.config-section select:focus,
+.config-section input:focus,
+.config-section textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+.config-section textarea {
+  resize: vertical;
+  min-height: 80px;
+  font-family: inherit;
+}
+
+.content-type-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.content-type-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.75rem 0.5rem;
+  background: var(--card-bg);
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.content-type-btn:hover {
+  border-color: var(--primary-color);
+  background: var(--hover-bg);
+}
+
+.content-type-btn.selected {
+  border-color: var(--primary-color);
+  background: var(--primary-color);
+  color: white;
+}
+
+.delay-config {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.delay-config input {
+  flex: 1;
+}
+
+.delay-config select {
+  flex: 1;
+}
+
+/* ====== RESPONSIVE DESIGN ====== */
+
+/* Tablet Styles */
+@media (max-width: 1024px) {
+  .components-palette {
+    width: 240px;
+    min-width: 240px;
+  }
+  
+  .properties-panel {
+    width: 260px;
+    min-width: 260px;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .flow-builder-container {
+    height: 100vh;
+  }
+
+  .builder-content {
+    flex-direction: column;
+  }
+  
+  .components-palette {
+    width: 100%;
+    min-width: 100%;
+    height: 200px;
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .palette-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.5rem;
+  }
+  
+  .palette-item {
+    padding: 0.5rem;
+  }
+  
+  .canvas-area {
+    flex: 1;
+  }
+  
+  .properties-panel {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    z-index: 1001;
+    transition: right 0.3s ease;
+    border-left: none;
+    border-top: 1px solid var(--border-color);
+  }
+  
+  .properties-panel.open {
+    right: 0;
+  }
+  
+  .canvas-node {
+    width: 160px;
+  }
+  
+  .flow-canvas {
+    min-height: 400px;
+  }
+
+  .builder-header {
+    padding: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .builder-title h2 {
+    font-size: 1.1rem;
+  }
+  
+  .save-btn,
+  .close-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+  .builder-header {
+    padding: 0.75rem;
+  }
+  
+  .builder-title h2 {
+    font-size: 1rem;
+  }
+  
+  .canvas-node {
+    width: 140px;
+  }
+  
+  .palette-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+}

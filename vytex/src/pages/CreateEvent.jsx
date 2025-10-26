@@ -1,0 +1,9 @@
+import React from 'react';      
+
+function CreateEvent() {
+    return <div> Create Event </div>;
+}
+
+export default CreateEvent;
+
+

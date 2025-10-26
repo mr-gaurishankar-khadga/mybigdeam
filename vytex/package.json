@@ -1,0 +1,43 @@
+{
+  "name": "vytex",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@mui/icons-material": "^7.1.1",
+    "axios": "^1.12.2",
+    "dotenv": "^16.6.1",
+    "instagram-graph-api": "^7.0.0",
+    "instagram-private-api": "^1.46.1",
+    "lodash": "^4.17.21",
+    "lucide-react": "^0.503.0",
+    "node-fetch": "^3.3.2",
+    "prop-types": "^15.8.1",
+    "react": "^19.0.0",
+    "react-beautiful-dnd": "^13.1.1",
+    "react-device-detect": "^2.2.3",
+    "react-dnd": "^16.0.1",
+    "react-dnd-html5-backend": "^16.0.1",
+    "react-dnd-touch-backend": "^16.0.1",
+    "react-dom": "^19.0.0",
+    "react-icons": "^5.5.0",
+    "react-router-dom": "^7.5.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.22.0",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react-swc": "^3.8.0",
+    "eslint": "^9.22.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^16.0.0",
+    "vite": "^6.3.1"
+  }
+}

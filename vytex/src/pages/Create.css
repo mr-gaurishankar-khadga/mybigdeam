@@ -1,0 +1,131 @@
+.create-page {
+  padding: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.create-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.create-header h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  color: var(--text-color);
+}
+
+.create-header p {
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.create-options {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.create-option-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 24px;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.create-option-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-color);
+  background: var(--hover-bg);
+}
+
+.create-option-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--primary-color);
+  transform: scaleX(0);
+  transition: transform var(--transition-normal);
+}
+
+.create-option-card:hover::before {
+  transform: scaleX(1);
+}
+
+.option-icon {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  background: var(--hover-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.option-content {
+  flex: 1;
+}
+
+.option-content h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  color: var(--text-color);
+}
+
+.option-content p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.option-arrow {
+  font-size: 20px;
+  color: var(--text-secondary);
+  transition: all var(--transition-normal);
+}
+
+.create-option-card:hover .option-arrow {
+  color: var(--primary-color);
+  transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+  .create-page {
+    padding: 20px;
+  }
+  
+  .create-options {
+    grid-template-columns: 1fr;
+  }
+  
+  .create-option-card {
+    padding: 20px;
+  }
+  
+  .option-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .option-content h3 {
+    font-size: 18px;
+  }
+}

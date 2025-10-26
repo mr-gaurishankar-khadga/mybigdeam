@@ -1,0 +1,49 @@
+# Environment variables and credentials
+.env
+.env.local
+.env.*.local
+*.env
+config.json
+credentials.json
+
+# IDE and Editor files
+.idea/
+.vscode/
+*.sublime-*
+*.swp
+*.swo
+
+# Dependencies
+node_modules/
+vendor/
+bower_components/
+
+# Build outputs
+dist/
+build/
+out/
+*.log
+
+# API keys and secrets
+**/apikey.json
+**/secrets.*
+**/credentials.*
+
+# Certificate files
+*.pem
+*.key
+*.crt
+
+# Local configuration
+config.local.js
+settings.local.json
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+debug.log
+
+# Operating System files
+.DS_Store
+Thumbs.db
